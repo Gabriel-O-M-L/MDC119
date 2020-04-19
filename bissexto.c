@@ -1,21 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main () {
+int is_bissexto(int i){
 
-    int ano;
-
-    printf("digite o ano");
-    scanf("%d", &ano);
-
-    if ((ano%4==0 && ano%100 != 0) || ano%400 == 0)
+    if ((i%4==0 && i%100 != 0) || i%400 == 0)
     {
-        printf("ano e bissexto");
+        return 1;
     }
     else
     {
-        printf("ano nao e bissexto");
+        return 0;
+    }
+}
+
+int main(){
+
+    int ano;
+    scanf("%d", &ano);
+
+    if(is_bissexto(ano) == 1){
+        printf("ano e bissexto \n");    
+    }
+    else
+    {
+        printf("ano nao e bissexto \n");
     }
     
-    return 0;
 }
+
+

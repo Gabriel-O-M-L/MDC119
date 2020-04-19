@@ -1,16 +1,25 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+
+int converte_hhmmss_em_segundos(int h, int m , int s){
+    int segundos_total = 0;
+
+    segundos_total=((h*60)*60);
+    segundos_total = segundos_total + (m*60);
+    segundos_total = segundos_total + s;
+    return segundos_total;
+
+}
 
 int main (){
+    int horas;
+    int minutos;
+    int segundos;
 
-    int segundos = 300;
-    int horas = (segundos/3600);
-    segundos = (segundos%3600);
-    int minutos = (segundos/60);
-    segundos = segundos/60;
+    printf("escreva em ordem horas,minutos e segundos \n");
+    scanf("%d", &horas);
+    scanf("%d", &minutos);
+    scanf("%d", &segundos);
 
-    printf("o horario e : %d:%d:%d", horas,minutos,segundos);
-
-    return 0;
-
+    printf("%d", converte_hhmmss_em_segundos(horas,minutos,segundos));
 }
